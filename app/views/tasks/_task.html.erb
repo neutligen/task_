@@ -1,0 +1,11 @@
+<li id="task-<%= task.id %>">
+  <span class="title"><%= task.title %></span>
+  <span class="timestamp">
+    <%= task.due_at %>まで<br>
+    
+      <%= link_to "削除", task, method: :delete,
+                                       data: { confirm: "削除しますか？" } %>
+      <%= link_to "完了", task, method: :delete　%>
+    
+  </span>
+</li>

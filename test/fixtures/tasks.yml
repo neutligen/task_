@@ -1,0 +1,36 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  title: Complete essay
+  content: MyText
+  due_at: 2016-02-29 08:20:29
+  remind_at: 2016-02-25 08:20:29
+  user: michael
+
+two:
+  title: Buy new jacket
+  content: MyText
+  due_at: 2016-02-26 08:20:29
+  remind_at: 2016-02-25 08:20:29
+  user: michael
+
+three:
+  title: Prepare for exam
+  content: ielts
+  due_at: 2016-02-28 11:00:00
+  remind_at: 2016-02-26 08:00:00
+  user: michael 
+  
+most_urgent:
+  title: Urgent!!
+  content: Something has gone wrong.
+  due_at: 2016-02-25 08:20:29
+  remind_at: 2016-02-25 08:20:29
+  user: michael
+
+<% 30.times do |n| %>
+task_<%= n %>:
+  title: <%= Faker::Lorem.sentence(2) %>
+  due_at: 2016-02-28 11:00:00
+  remind_at: 2016-02-26 08:00:00
+  user: michael
+<% end %>
