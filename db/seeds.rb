@@ -17,7 +17,7 @@ end
 users = User.order(:created_at).take(6)
 50.times do
   title = Faker::Lorem.words(3).join(" ")
-  due_at = Faker::Time.between(Time.zone.now, Time.zone.now + 30)
+  due_at = Faker::Time.forward(30)
   content= Faker::Lorem.sentences(3).join(" ")
   users.each { |user| 
               user.tasks.create!(title: title, due_at: due_at, content: content)
