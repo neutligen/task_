@@ -2,8 +2,8 @@ class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
       t.string :title
-      t.text :content
-      t.datetime :due_at
+      t.text :content, :default => "デフォルト値"
+      t.datetime :due_at, :default => Time.zone.now
       t.datetime :remind_at
       t.references :user, index: true, foreign_key: true
 

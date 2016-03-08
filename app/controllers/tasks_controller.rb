@@ -8,15 +8,29 @@ class TasksController < ApplicationController
       flash[:success] = "タスクが保存されました"
       redirect_to root_url
     else
-      @feed_items = []
+      @tasks = []
       render 'static_pages/home'
     end
   end
 
   def destroy
     @task.destroy
-    flash[:success] = "Task deleted"
+    flash[:success] = "タスクが削除されました"
     redirect_to request.referrer || root_url
+  end
+  
+  def show
+    @task = current_user.tasks.find(params[:id])
+  end
+  
+  def update
+     @task = current_user.tasks.find(params[:id])
+    if @task.save
+      flash[:success] = "タスクの変更が保存されました"
+      redirect_to root_url
+    else
+      render 'static_pages/home'
+    end
   end
 
   private

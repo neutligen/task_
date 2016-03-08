@@ -1,7 +1,8 @@
 User.create!(name:  "Example User",
              email: "example@railstutorial.org",
              password:              "foobar",
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+             admin: true)
 
 99.times do |n|
   name  = Faker::Name.name
@@ -15,9 +16,10 @@ end
 
 users = User.order(:created_at).take(6)
 50.times do
-  title = Faker::Lorem.sentence(1)
+  title = Faker::Lorem.words(3).join(" ")
+  due_at = Faker::Time.between(Time.zone.now, Time.zone.now + 30)
+  content= Faker::Lorem.sentences(3).join(" ")
   users.each { |user| 
-              user.tasks.create!(title: title)
-              user.task.due_at=Time.zone.now        
+              user.tasks.create!(title: title, due_at: due_at, content: content)
               }
 end

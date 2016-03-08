@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
                     format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   
   # 与えられた文字列のハッシュ値を返す 
   def User.digest(string)
@@ -37,12 +37,6 @@ class User < ActiveRecord::Base
   # ユーザーログインを破棄する
   def forget
     update_attribute(:remember_digest, nil)
-  end
-  
-  # 試作feedの定義
-  # 完全な実装は第12章「ユーザーをフォローする」を参照してください。
-  def feed
-    Task.where("user_id = ?", id)
   end
   
 end
