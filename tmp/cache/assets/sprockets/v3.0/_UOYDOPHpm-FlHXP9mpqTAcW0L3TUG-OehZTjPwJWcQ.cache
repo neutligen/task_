@@ -1,0 +1,7 @@
+I"d(function() {
+  $(function() {
+    return $('#calendar').fullCalendar();
+  });
+
+}).call(this);
+:ET

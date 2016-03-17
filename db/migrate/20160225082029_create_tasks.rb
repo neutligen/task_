@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :title
       t.text :content
-      t.datetime :due_at, :default => Time.zone.now
+      t.datetime :due_at
       t.datetime :remind_at
       t.references :user, index: true, foreign_key: true
 

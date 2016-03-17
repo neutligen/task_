@@ -1,0 +1,25 @@
+I"ð(function() {
+  $(function() {
+    return $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today myCustomButton',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      events: [
+        {
+          title: 'Event1',
+          start: '2016-03-04'
+        }, {
+          title: 'Event2',
+          start: '2016-03-05'
+        }, {
+          title: this.task.title,
+          start: this.tadk.due_at
+        }
+      ]
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,13 @@
+I"ó(function() {
+  $(function() {
+    return $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today myCustomButton',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      }
+    });
+  });
+
+}).call(this);
+:ET

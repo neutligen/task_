@@ -15,7 +15,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    flash[:success] = "タスクが削除されました"
+    # flash[:success] = "タスクが削除されました"
     redirect_to request.referrer || root_url
   end
   
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   private
 
     def task_params
-      params.require(:task).permit(:title)
+      params.require(:task).permit(:title, :due_at, :content)
     end
     
     def correct_user

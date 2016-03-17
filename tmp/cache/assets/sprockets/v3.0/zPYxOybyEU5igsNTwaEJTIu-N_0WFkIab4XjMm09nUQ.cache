@@ -1,0 +1,9 @@
+I"|(function() {
+  $(function() {
+    return $('#calendar').fullCalendar({
+      weekends: false
+    });
+  });
+
+}).call(this);
+:ET

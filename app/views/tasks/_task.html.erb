@@ -4,8 +4,7 @@
     <%= task.due_at.month %>月<%= task.due_at.day %>日<%= task.due_at.hour %>時<%= task.due_at.min %>分<br>
     <%= link_to "削除", task, method: :delete,
                                        data: { confirm: "削除しますか？" } %>
-    <%= link_to "完了", task, method: :delete,
-                                       data: { confirm: "完了ですか？" } %>
+    <%= link_to "完了", task, method: :delete, data: {confirm: "がんばりましたね！"} %>
     
   </span>
 </li>
