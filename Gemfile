@@ -15,6 +15,8 @@ gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :do
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'google-api-client', '0.9'
+gem "jwt"
   
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
