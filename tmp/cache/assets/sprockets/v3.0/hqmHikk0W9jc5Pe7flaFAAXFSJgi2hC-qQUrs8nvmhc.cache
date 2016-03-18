@@ -1,0 +1,27 @@
+I"Ð(function() {
+  $(document).ready(function() {
+    return $('#calendar').fullCalendar({
+      editable: true,
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      defaultView: 'month',
+      slotMinutes: 30,
+      viewDisplay: function(view) {
+        return $.ajax({
+          url: "https://task-management-shionhonda1215.c9users.io/calendar/1",
+          dataType: 'json',
+          type: "post",
+          success: function(EventSource) {
+            $('#calendar').fullCalendar('removeEvents');
+            return $('#calendar').fullCalendar('addEventSource', EventSource);
+          }
+        });
+      }
+    });
+  });
+
+}).call(this);
+:ET

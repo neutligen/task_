@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'calendar/index'
+  get 'calendar/show'
 
   get 'sessions/new'
 
@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'login'     => 'sessions#new'
   post 'login'    => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  
   resources :users
   resources :tasks
+  resources :calendar
+  
 end
